@@ -1,69 +1,54 @@
 body {
-  font-family: Times New Roman, sans-serif;
-  background-color: #e6f2f9;
+  font-family: Arial, sans-serif;
+  background-color: #fff0f5;
   margin: 0;
-  padding: 20px;
+  padding: 2rem;
 }
 
-h1 {
-  text-align: center;
-  color: #035f85;
-  font-weight: bold;
-  font-style: italic;
-}
-
-h2 {
-  color: #047aa3;
-  font-weight: bold;
-  font-style: italic;
-  border-bottom: 2px solid #a7d7eb;
-  padding-bottom: 5px;
-}
-
-.grid-container {
+.malla {
   display: flex;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  margin-top: 30px;
 }
 
 .semestre {
-  background-color: #ffffff;
+  background-color: #ffe4ec;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 1rem;
   width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.semestre h2 {
+  text-align: center;
+  color: #d63384;
 }
 
 .ramo {
-  background-color: #b8e0f0;
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
   border: none;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 5px 0;
+  border-radius: 8px;
+  background-color: #f9b6cc;
+  color: #000;
   cursor: pointer;
-  font-weight: bold;
-  color: #023c54;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.3s ease;
 }
 
 .ramo:hover {
-  background-color: #93cfe6;
-  transform: scale(1.02);
+  background-color: #f793b3;
 }
 
 .ramo.aprobado {
-  background-color: #64c3d9;
-  color: white;
-  box-shadow: inset 0 0 5px #035f85;
+  background-color: #c0f5c8;
+  text-decoration: line-through;
 }
 
 .ramo.bloqueado {
-  opacity: 0.5;
+  background-color: #f3f3f3;
+  color: #aaa;
   cursor: not-allowed;
 }
-

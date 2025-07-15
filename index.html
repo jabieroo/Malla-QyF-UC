@@ -1,14 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malla Interactiva Química y Farmacia</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Malla Interactiva - Química y Farmacia</h1>
-  <div class="malla" id="malla"></div>
+  <div class="malla">
+    <!-- I Semestre -->
+    <div class="semestre">
+      <h2>I Semestre</h2>
+      <button class="ramo" data-id="qg1" data-abre="qg2">Química general I</button>
+      <button class="ramo" data-id="meds" data-abre="botanica">El mundo de los medicamentos</button>
+      <button class="ramo" data-id="precalculo" data-abre="calculo1">Precálculo</button>
+      <button class="ramo" data-id="intro">Introducción a las ciencias farmacéuticas</button>
+      <button class="ramo" data-id="labqg1">Laboratorio de química general I</button>
+      <button class="ramo" data-id="electivo1">Electivo</button>
+    </div>
+
+    <!-- II Semestre -->
+    <div class="semestre">
+      <h2>II Semestre</h2>
+      <button class="ramo bloqueado" data-id="qg2" data-prereqs="qg1" data-abre="botanica,qo1,qa1,qf">Química general II</button>
+      <button class="ramo bloqueado" data-id="calculo1" data-prereqs="precalculo" data-abre="estadistica,qf">Cálculo I</button>
+      <button class="ramo" data-id="fisica" data-abre="qf">Física para ciencias</button>
+      <button class="ramo" data-id="electivo2">Electivo</button>
+      <button class="ramo" data-id="electivo3">Electivo</button>
+    </div>
+
+    <!-- III Semestre -->
+    <div class="semestre">
+      <h2>III Semestre</h2>
+      <button class="ramo bloqueado" data-id="botanica" data-prereqs="meds,qg2">Botánica y farmacognosia</button>
+      <button class="ramo bloqueado" data-id="qo1" data-prereqs="qg2">Química orgánica I</button>
+      <button class="ramo bloqueado" data-id="estadistica" data-prereqs="calculo1">Estadística para química y farmacia</button>
+      <button class="ramo" data-id="biocel" data-abre="fisiologia">Biología de la célula</button>
+      <button class="ramo" data-id="electivo4">Electivo</button>
+    </div>
+
+    <!-- IV Semestre -->
+    <div class="semestre">
+      <h2>IV Semestre</h2>
+      <button class="ramo bloqueado" data-id="qo2" data-prereqs="qo1" data-abre="labqo,bioq">Química orgánica II</button>
+      <button class="ramo bloqueado" data-id="qa1" data-prereqs="estadistica,qg2" data-abre="analisis">Química analítica I</button>
+      <button class="ramo bloqueado" data-id="fisiologia" data-prereqs="biocel" data-abre="micro,fisiopato">Fisiología</button>
+      <button class="ramo" data-id="electivo5">Electivo</button>
+      <button class="ramo" data-id="electivo6">Electivo</button>
+    </div>
+
+    <!-- V Semestre -->
+    <div class="semestre">
+      <h2>V Semestre</h2>
+      <button class="ramo bloqueado" data-id="labqo" data-prereqs="qo2" data-abre="farmacoq1">Laboratorio de química orgánica</button>
+      <button class="ramo bloqueado" data-id="bioq" data-prereqs="qo2" data-abre="micro,bioqcli,farmaco1">Bioquímica</button>
+      <button class="ramo bloqueado" data-id="qf" data-prereqs="qg2,calculo1,fisica" data-abre="cinetica,farmacoq1">Química-Física</button>
+      <button class="ramo bloqueado" data-id="fisiopato" data-prereqs="fisiologia" data-abre="farmaco1,bioqcli">Fisiopatología</button>
+    </div>
+
+    <!-- VI Semestre -->
+    <div class="semestre">
+      <h2>VI Semestre</h2>
+      <button class="ramo bloqueado" data-id="micro" data-prereqs="bioq,fisiologia">Microbiología e inmunología</button>
+      <button class="ramo bloqueado" data-id="farmaco1" data-prereqs="bioq,fisiopato" data-abre="farmaco2,saludpub">Farmacología I</button>
+      <button class="ramo bloqueado" data-id="farmacoq1" data-prereqs="labqo,qf" data-abre="farmacoq2,legis">Fármaco-química I</button>
+      <button class="ramo bloqueado" data-id="cinetica" data-prereqs="qf" data-abre="tecfa1">Farmacocinética y Biofarmacia</button>
+      <button class="ramo" data-id="electivo7">Electivo</button>
+    </div>
+
+    <!-- VII Semestre -->
+    <div class="semestre">
+      <h2>VII Semestre</h2>
+      <button class="ramo bloqueado" data-id="bioqcli" data-prereqs="bioq,fisiopato">Bioquímica clínica</button>
+      <button class="ramo bloqueado" data-id="farmaco2" data-prereqs="farmaco1" data-abre="farmaco3,farmaciaclinica">Farmacología II</button>
+      <button class="ramo bloqueado" data-id="farmacoq2" data-prereqs="farmacoq1" data-abre="toxico,farmacoq3,farmaciaclinica,tecfa2">Fármaco-química II</button>
+      <button class="ramo bloqueado" data-id="tecfa1" data-prereqs="cinetica" data-abre="tesis,practica1,tecfa2">Tecnología farmacéutica I</button>
+      <button class="ramo" data-id="electivo8">Electivo</button>
+    </div>
+
+    <!-- VIII Semestre -->
+    <div class="semestre">
+      <h2>VIII Semestre</h2>
+      <button class="ramo bloqueado" data-id="toxico" data-prereqs="farmacoq2">Toxicología</button>
+      <button class="ramo bloqueado" data-id="tesis" data-prereqs="tecfa1">Tesis</button>
+    </div>
+
+    <!-- IX Semestre -->
+    <div class="semestre">
+      <h2>IX Semestre</h2>
+      <button class="ramo bloqueado" data-id="farmaco3" data-prereqs="farmaco2">Farmacología III</button>
+      <button class="ramo bloqueado" data-id="farmacoq3" data-prereqs="farmacoq2" data-abre="privada">Fármaco-química III</button>
+      <button class="ramo bloqueado" data-id="farmaciaclinica" data-prereqs="farmaco2,farmacoq2" data-abre="internado">Farmacia clínica y Atención farmacéutica</button>
+      <button class="ramo bloqueado" data-id="tecfa2" data-prereqs="farmacoq2,tecfa1">Tecnología farmacéutica II</button>
+      <button class="ramo" data-id="opr1">OPR</button>
+      <button class="ramo bloqueado" data-id="practica1" data-prereqs="tecfa1" data-abre="practica2">Práctica profesional I</button>
+    </div>
+
+    <!-- X Semestre -->
+    <div class="semestre">
+      <h2>X Semestre</h2>
+      <button class="ramo bloqueado" data-id="saludpub" data-prereqs="farmaco1">Salud pública para química y farmacia</button>
+      <button class="ramo bloqueado" data-id="internado" data-prereqs="farmaciaclinica">Internado clínico</button>
+      <button class="ramo bloqueado" data-id="privada" data-prereqs="farmacoq3">Farmacia privada</button>
+      <button class="ramo bloqueado" data-id="legis" data-prereqs="farmacoq1">Legislación y Deontología farmacéutica</button>
+      <button class="ramo" data-id="opr2">OPR</button>
+      <button class="ramo" data-id="opr3">OPR</button>
+      <button class="ramo bloqueado" data-id="practica2" data-prereqs="practica1">Práctica profesional II</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
